@@ -1,4 +1,8 @@
-const DEFAULT_KEY = typeof __PORTFOLIO_KEY__ !== "undefined" ? __PORTFOLIO_KEY__ : "portfolio-v1-local-dev-key";
+import { DECODE_KEY } from "./decodeKey.js";
+
+const DEFAULT_KEY =
+  DECODE_KEY ||
+  (typeof __PORTFOLIO_KEY__ !== "undefined" ? __PORTFOLIO_KEY__ : "portfolio-v1-local-dev-key");
 
 async function sha256Bytes(input) {
   const encoded = new TextEncoder().encode(input);
@@ -49,7 +53,15 @@ export async function decodePortfolio(bundle, secret = DEFAULT_KEY) {
   const key = await sha256Bytes(secret);
   const plain = xorBuffer(masked, key);
   const json = new TextDecoder().decode(plain);
-  const data = JSON.parse(json);
+
+  let data;
+  try {
+    data = JSON.parse(json);
+  } catch {
+    throw new Error(
+      "Decode key does not match the portfolio bundle. Run npm run data:encode locally, then redeploy.",
+    );
+  }
 
   if (bundle.h) {
     const digest = bytesToBase64Url(await crypto.subtle.digest("SHA-256", plain)).slice(0, 16);
