@@ -8,8 +8,13 @@ const privatePath = join(root, "data", "portfolio.private.json");
 const outputPath = join(root, "src", "data", "portfolio.bundle.json");
 
 if (!existsSync(privatePath)) {
-  console.error("\nMissing data/portfolio.private.json");
-  console.error("Create that file with your portfolio data, then run: npm run data:encode\n");
+  if (existsSync(outputPath)) {
+    console.log("Skipping encode: using committed src/data/portfolio.bundle.json");
+    process.exit(0);
+  }
+
+  console.error("\nMissing data/portfolio.private.json and no portfolio.bundle.json");
+  console.error("Create portfolio.private.json locally, run npm run data:encode, then commit the bundle.\n");
   process.exit(1);
 }
 
