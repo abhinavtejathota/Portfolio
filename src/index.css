@@ -27,12 +27,20 @@ body {
   background-color: var(--color-pixel-bg);
   color: #e8e8ff;
   font-family: var(--font-retro);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.25rem;
+  }
 }
 
 #root {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .pixel-grid-bg {
@@ -104,4 +112,13 @@ body {
 
 .bounce-hint {
   animation: bounce-hint 0.8s ease-in-out infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

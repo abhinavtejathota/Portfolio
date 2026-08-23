@@ -42,7 +42,7 @@ export default function AnimatedNavbarName() {
   return (
     <a
       href="#top"
-      className="group relative inline-flex min-w-[128px] items-center md:min-w-[148px]"
+      className="group relative inline-flex min-w-[96px] items-center sm:min-w-[128px] md:min-w-[148px]"
       aria-label={FULL}
     >
       <span
@@ -50,7 +50,7 @@ export default function AnimatedNavbarName() {
         aria-hidden="true"
       />
 
-      <span className="relative inline-block min-w-[7.5ch] text-left font-pixel text-[0.68rem] leading-none md:text-[0.78rem]">
+      <span className="relative inline-block min-w-[7.5ch] text-left font-pixel text-[0.58rem] leading-none sm:text-[0.68rem] md:text-[0.78rem]">
         <AnimatePresence mode="wait" initial={false}>
           <motion.span
             key={text}

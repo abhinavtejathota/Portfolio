@@ -30,12 +30,12 @@ export default function AnimatedTagline({ tagline }) {
 
   if (words.length === 0) {
     return (
-      <p className="mt-3 text-2xl text-white/80 md:text-3xl">{tagline}</p>
+      <p className="mt-3 text-lg text-white/80 sm:text-xl md:text-2xl">{tagline}</p>
     );
   }
 
   return (
-    <p className="mt-3 flex flex-wrap items-baseline justify-center gap-x-2 text-2xl text-white/80 md:text-3xl">
+    <p className="mt-2 flex flex-wrap items-baseline justify-center gap-x-2 text-lg text-white/80 sm:mt-3 sm:text-xl md:text-2xl">
       <span>{prefix}</span>
       <span className="text-white/40" aria-hidden="true">
         ·
