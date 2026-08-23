@@ -1,20 +1,9 @@
 # Portfolio
 
-Interactive pixel-art portfolio built with React, Vite, and Tailwind CSS.
+Personal portfolio website for **Abhinav Teja Thota** — full-stack developer with an interest in cybersecurity and building practical web applications.
 
-## Setup
+Features a retro pixel-art interface with interactive sections for projects, experience, skills, education, and contact.
 
-```bash
-npm install
-# create data/portfolio.private.json with your details (gitignored)
-npm run data:encode
-npm run dev
-```
+**Built with:** React · Vite · Tailwind CSS · Framer Motion
 
-Private data lives in `data/portfolio.private.json` (gitignored). Run `npm run data:encode` before dev/build to generate the obfuscated bundle.
-
-## Scripts
-
-- `npm run dev` — start dev server
-- `npm run build` — production build
-- `npm run data:encode` — regenerate obfuscated portfolio bundle
+**Connect:** [GitHub](https://github.com/abhinavtejathota) · [LinkedIn](https://linkedin.com/in/abhinav-teja-thota)
