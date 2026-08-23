@@ -14,10 +14,10 @@ export default function SectionButton({
   const scale = compact ? 2 : 3;
 
   return (
-    <div className="relative inline-flex flex-col items-center">
+    <div className="relative inline-flex shrink-0 flex-col items-center pb-9 sm:pb-10 md:pb-0">
       <div className="relative">
         {highlight && !isActive && (
-          <div className="hidden md:block">
+          <div className="hidden sm:block">
             <GuideWalker accent={accent} label="Try me!" compact={compact} />
           </div>
         )}
@@ -41,8 +41,8 @@ export default function SectionButton({
         </button>
 
         <motion.div
-          className="pointer-events-none absolute left-1/2 z-0 hidden -translate-x-1/2 md:block"
-          style={{ top: "calc(100% - 6px)" }}
+          className="pointer-events-none absolute left-1/2 z-0 origin-top -translate-x-1/2 scale-[0.72] sm:scale-90 md:scale-100"
+          style={{ top: "calc(100% - 4px)" }}
           animate={isActive ? { y: -14, opacity: 1 } : { y: 4, opacity: 0.9 }}
           transition={{ type: "spring", stiffness: 500, damping: 22 }}
         >

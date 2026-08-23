@@ -34,19 +34,19 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-black bg-pixel-bg/95 backdrop-blur-sm pt-[env(safe-area-inset-top,0px)]">
+    <header className="sticky top-0 z-50 overflow-visible border-b-2 border-black bg-pixel-bg/95 backdrop-blur-sm pt-[env(safe-area-inset-top,0px)]">
       <div className="mx-auto max-w-5xl px-4 py-3 md:pb-10 md:pt-3">
         <div className="mb-3 flex justify-center md:mb-0 md:hidden">
           <AnimatedNavbarName />
         </div>
 
-        <div className="flex items-center md:justify-between">
+        <div className="flex items-start md:items-center md:justify-between">
           <div className="hidden shrink-0 md:block">
             <AnimatedNavbarName />
           </div>
 
           <nav
-            className="scrollbar-hide -mx-4 flex flex-nowrap items-center gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:items-end md:justify-end md:gap-x-3 md:gap-y-6 md:overflow-visible md:px-0 md:pb-0"
+            className="scrollbar-hide -mx-4 flex flex-nowrap items-end gap-2 overflow-x-auto overflow-y-visible px-4 md:mx-0 md:flex-wrap md:justify-end md:gap-x-3 md:gap-y-6 md:overflow-visible md:px-0"
             aria-label="Main navigation"
           >
             {navSections.map((section) => (

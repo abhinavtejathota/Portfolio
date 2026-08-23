@@ -191,7 +191,7 @@ export function EducationContent() {
 
       <div className="pixel-border bg-black/25 p-4">
         <h3 className="mb-3 font-pixel text-[0.55rem] text-pixel-green">Coding Profiles</h3>
-        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-3">
           {codingProfiles.map((cp) => {
             const safeUrl = sanitizeHref(cp.url);
             if (!safeUrl) return null;
@@ -203,10 +203,12 @@ export function EducationContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={cp.platform}
-                className="pixel-btn group flex flex-col items-center justify-center gap-2 border border-pixel-border bg-black/20 p-3 transition hover:border-pixel-green hover:bg-black/40 sm:p-4"
+                className="group flex min-w-0 flex-row items-center justify-center gap-3 border border-pixel-border bg-black/20 p-3 transition hover:border-pixel-green hover:bg-black/40 min-[480px]:flex-col min-[480px]:gap-2 min-[480px]:p-4"
               >
                 <CodingProfileIcon platform={cp.platform} />
-                <span className="text-base text-white group-hover:text-pixel-green sm:text-lg">{cp.platform}</span>
+                <span className="text-base text-white group-hover:text-pixel-green min-[480px]:text-center sm:text-lg">
+                  {cp.platform}
+                </span>
               </a>
             );
           })}

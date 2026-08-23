@@ -10,7 +10,7 @@ export default function SectionBlock({ section, children }) {
     <section
       id={section.id}
       ref={ref}
-      className="scroll-mt-[4.5rem] py-8 sm:scroll-mt-24 sm:py-12 md:py-16"
+      className="scroll-mt-[7.5rem] py-8 sm:scroll-mt-[8rem] md:scroll-mt-24 sm:py-12 md:py-16"
       aria-labelledby={`heading-${section.id}`}
     >
       <div className="mb-4 flex items-end gap-2 sm:mb-6 sm:gap-3 md:mb-8 md:gap-4">
